@@ -19,12 +19,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.SimpleAttributeSet;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -43,24 +38,24 @@ public class SWRLRuleEditorDialog extends JDialog implements SWRLAPIView
 
   private static final Logger log = LoggerFactory.getLogger(SWRLRuleEditorDialog.class);
 
-  private static final String TITLE = "Edit";
-  private static final String RULE_NAME_TITLE = "Name";
-  private static final String COMMENT_LABEL_TITLE = "Comment";
-  private static final String STATUS_LABEL_TITLE = "Status";
+  private static final String TITLE = "编辑";
+  private static final String RULE_NAME_TITLE = "规则名称";
+  private static final String COMMENT_LABEL_TITLE = "规则注释";
+  private static final String STATUS_LABEL_TITLE = "状态";
   private static final String OK_BUTTON_TITLE = "Ok";
-  private static final String CANCEL_BUTTON_TITLE = "Cancel";
+  private static final String CANCEL_BUTTON_TITLE = "取消";
   private static final String STATUS_OK = "Ok";
   private static final String STATUS_NO_RULE_TEXT =
-    "Use Tab key to cycle through auto-completions;" + " use Escape key to remove auto-complete expansion";
-  private static final String INVALID_RULE_TITLE = "Invalid";
+    "按TAB键自动补全，" + "Escape键取消";
+  private static final String INVALID_RULE_TITLE = "无效";
   private static final String MISSING_RULE = "Nothing to save!";
-  private static final String MISSING_RULE_NAME_TITLE = "Empty Name";
-  private static final String MISSING_RULE_NAME = "A name must be supplied!";
-  private static final String QUIT_CONFIRM_TITLE = "Unsaved Changes";
-  private static final String QUIT_CONFIRM_MESSAGE = "Are you sure you want discard your changes?";
-  private static final String DUPLICATE_RULE_TEXT = "Name already in use - please pick another name.";
-  private static final String DUPLICATE_RULE_TITLE = "Duplicate Name";
-  private static final String INTERNAL_ERROR_TITLE = "Internal Error";
+  private static final String MISSING_RULE_NAME_TITLE = "规则名称不能为空";
+  private static final String MISSING_RULE_NAME = "规则必须有个名称";
+  private static final String QUIT_CONFIRM_TITLE = "未保存更改";
+  private static final String QUIT_CONFIRM_MESSAGE = "您确定要放弃所做的更改吗?";
+  private static final String DUPLICATE_RULE_TEXT = "名称已存在，请换个名称";
+  private static final String DUPLICATE_RULE_TITLE = "名称已存在";
+  private static final String INTERNAL_ERROR_TITLE ="内部错误";
 
   private static final int BUTTON_PREFERRED_WIDTH = 100;
   private static final int BUTTON_PREFERRED_HEIGHT = 30;
@@ -80,7 +75,7 @@ public class SWRLRuleEditorDialog extends JDialog implements SWRLAPIView
   private boolean editMode = false;
 
   public SWRLRuleEditorDialog(@NonNull SWRLRuleEngineModel swrlRuleEngineModel,
-    @NonNull SWRLRuleEngineDialogManager dialogManager)
+                              @NonNull SWRLRuleEngineDialogManager dialogManager)
   {
     this.swrlRuleEngineModel = swrlRuleEngineModel;
     this.dialogManager = dialogManager;
