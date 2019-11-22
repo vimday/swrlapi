@@ -34,10 +34,10 @@ public class SWRLRulesTableView extends JPanel implements SWRLAPIView
 
   private static final Logger log = LoggerFactory.getLogger(SWRLRulesTableView.class);
 
-  private static final String NEW_BUTTON_TITLE = "New";
-  private static final String EDIT_BUTTON_TITLE = "Edit";
-  private static final String DELETE_BUTTON_TITLE = "Delete";
-  private static final String CLONE_BUTTON_TITLE = "Clone";
+  private static final String NEW_BUTTON_TITLE = "新建";
+  private static final String EDIT_BUTTON_TITLE = "编辑";
+  private static final String DELETE_BUTTON_TITLE = "删除";
+  private static final String CLONE_BUTTON_TITLE = "复制";
 
   private static final int ACTIVE_COLUMN_PREFERRED_WIDTH = 30;
   private static final int ACTIVE_COLUMN_MAX_WIDTH = 50;

@@ -15,7 +15,7 @@ import javax.swing.event.MenuListener;
 
 public class SWRLRuleEngineMenuManager
 {
-  private static final String FILE_MENU_TITLE = "File";
+  private static final String FILE_MENU_TITLE = "文件";
 
   public static void createSWRLRuleEngineMenus(@NonNull JFrame applicationFrame,
       @NonNull FileBackedSWRLRuleEngineModel ruleEngineModel, @NonNull SWRLRuleEngineDialogManager dialogManager)
