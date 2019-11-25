@@ -13,7 +13,7 @@ import java.io.File;
 
 public class OpenAction implements ActionListener
 {
-  public static final String OPEN_TITLE = "Open";
+  public static final String OPEN_TITLE = "打开文件";
 
   private static final String FILE_DESCRIPTION = "OWL Ontology";
   private static final String FILE_EXTENSION = "owl";

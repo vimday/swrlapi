@@ -11,9 +11,9 @@ import java.awt.event.ActionListener;
 
 public class CloseAction implements ActionListener
 {
-  public static final String CLOSE_TITLE = "Close";
+  public static final String CLOSE_TITLE = "关闭";
 
-  private static final String MESSAGE = "Do you really want to close the ontology?";
+  private static final String MESSAGE = "您真的要关闭吗?";
   private static final String ERROR_TITLE = "Error";
 
   @NonNull private final Component parent;

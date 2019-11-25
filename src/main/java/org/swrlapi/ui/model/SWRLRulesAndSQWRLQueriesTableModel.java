@@ -31,11 +31,11 @@ public class SWRLRulesAndSQWRLQueriesTableModel extends AbstractTableModel imple
     RuleContentOnly, QueryContentOnly, RuleAndQueryContent
   }
 
-  private static final String RULE_NAME_COLUMN_TITLE = "Name";
-  private static final String RULE_TEXT_COLUMN_TITLE = "Rule";
-  private static final String QUERY_TEXT_COLUMN_TITLE = "Query";
-  private static final String RULE_AND_QUERY_TEXT_COLUMN_TITLE = "Body";
-  private static final String RULE_COMMENT_COLUMN_TITLE = "Comment";
+  private static final String RULE_NAME_COLUMN_TITLE = "规则名称";
+  private static final String RULE_TEXT_COLUMN_TITLE = "规则";
+  private static final String QUERY_TEXT_COLUMN_TITLE = "查询";
+  private static final String RULE_AND_QUERY_TEXT_COLUMN_TITLE = "主体";
+  private static final String RULE_COMMENT_COLUMN_TITLE = "注释";
 
   @NonNull private SWRLRuleEngine swrlRuleEngine;
   @NonNull private SWRLRuleRenderer swrlRuleRenderer;

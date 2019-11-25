@@ -13,7 +13,7 @@ import java.io.File;
 
 public class SaveAsAction implements ActionListener
 {
-  public static final String SAVE_AS_TITLE = "Save As";
+  public static final String SAVE_AS_TITLE = "另存为";
   private static final String FILE_DESCRIPTION = "OWL Ontology";
   private static final String FILE_EXTENSION = "owl";
   private static final String ERROR_TITLE = "Error";

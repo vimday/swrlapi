@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 
 public class QuitAction implements ActionListener
 {
-  public static final String QUIT_TITLE = "Quit";
+  public static final String QUIT_TITLE = "退出";
 
-  private static final String MESSAGE = "Do you really want to quit?";
+  private static final String MESSAGE = "您真的要退出吗?";
 
   @NonNull private final Component parent;
   @NonNull private final FileBackedOntologyModel ontologyModel;

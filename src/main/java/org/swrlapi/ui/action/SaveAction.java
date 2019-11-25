@@ -11,9 +11,9 @@ import java.awt.event.ActionListener;
 
 public class SaveAction implements ActionListener
 {
-  public static final String SAVE_TITLE = "Save";
+  public static final String SAVE_TITLE = "保存";
 
-  private static final String ERROR_TITLE = "Error";
+  private static final String ERROR_TITLE = "错误！";
 
   @NonNull private final Component parent;
   @NonNull private final SWRLRuleEngineDialogManager dialogManager;

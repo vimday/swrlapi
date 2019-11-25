@@ -56,19 +56,19 @@ public class SQWRLQueryControlView extends JPanel implements SWRLAPIView
     add(BorderLayout.CENTER, consoleScrollPane);
 
     JPanel controlPanel = new JPanel(new FlowLayout());
-    JButton runSQWRLQueryButton = createButton("Run", "Run a SQWRL query",
+    JButton runSQWRLQueryButton = createButton("运行", "Run a SQWRL query",
       new RunSQWRLQueryActionListener(this.console, this));
     controlPanel.add(runSQWRLQueryButton);
     add(BorderLayout.SOUTH, controlPanel);
 
-    console.append("Select a SQWRL query from the list above and press the 'Run' button.\n");
-    console.append("If the selected query generates a result, the result will appear in a new sub tab.\n\n");
-    console.append(
-      "The SWRLAPI supports an OWL profile called OWL 2 RL and uses an OWL 2 RL-based reasoner to perform querying.\n");
-    console.append("See the 'OWL 2 RL' subtab for more information on this reasoner.\n\n");
-    console.append("Executing queries in this tab does not modify the ontology.\n\n");
+    console.append("从上面的列表中选择一个SQWRL查询，然后按“运行”按钮.\n");
+    console.append("如果所选查询生成结果，则该结果将显示在新的子选项卡中.\n\n");
+    //console.append(
+     // "The SWRLAPI supports an OWL profile called OWL 2 RL and uses an OWL 2 RL-based reasoner to perform querying.\n");
+    //console.append("See the 'OWL 2 RL' subtab for more information on this reasoner.\n\n");
+    //console.append("Executing queries in this tab does not modify the ontology.\n\n");
     console
-      .append("Using " + this.queryEngineModel.getSQWRLQueryEngine().getRuleEngineName() + " for query execution.\n\n");
+      .append("正在使用 " + this.queryEngineModel.getSQWRLQueryEngine().getRuleEngineName() + " 进行推理查询请求.\n\n");
   }
 
   @Override public void update()

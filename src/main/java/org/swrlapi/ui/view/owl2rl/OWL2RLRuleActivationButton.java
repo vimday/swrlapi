@@ -31,7 +31,7 @@ public class OWL2RLRuleActivationButton extends JCheckBox implements ActionListe
   @Override public void initialize()
   {
     setPreferredSize(new Dimension(TOOLTIP_PREFERRED_WIDTH, TOOLTIP_PREFERRED_HEIGHT));
-    setToolTipText("Click to enable or disable OWL 2 RL rule " + this.rule.toString() + ".");
+    setToolTipText("点击选择开启或关闭OWL 2 RL rule " + this.rule.toString() + ".");
     addActionListener(this);
     update();
   }
