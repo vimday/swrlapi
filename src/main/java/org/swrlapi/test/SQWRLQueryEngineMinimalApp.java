@@ -27,6 +27,9 @@ public class SQWRLQueryEngineMinimalApp
       Optional.of(new File(owlFilename.get())) :
       Optional.<@NonNull File>empty();
 
+      //Optional<@NonNull File> owlFile =
+        //      Optional.of(new File("/home/perhaps/Documents/data/yyp/YP/YPtest.owl"));
+
     try {
       OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
       OWLOntology ontology = owlFile.isPresent() ?

@@ -289,7 +289,7 @@ public class SWRLRulesAndSQWRLQueriesTableModel extends AbstractTableModel imple
       '}';
   }
 
-  private class SWRLRuleModel
+  public class SWRLRuleModel
   {
     @NonNull private final SWRLAPIRule rule;
 
