@@ -66,12 +66,12 @@ public class SQWRLResultView extends JPanel implements SWRLAPIView
     JTable sqwrlQueryResultTable = new JTable(this.sqwrlQueryResultTableModel);
 
     JPanel buttonsPanel = new JPanel(new FlowLayout());
-    JButton saveSQWRLResultButton = createButton("Save as CSV...", "Save the result as a CSV file...",
+    JButton saveSQWRLResultButton = createButton("另存为CSV...", "Save the result as a CSV file...",
       new SaveSQWRLResultActionListener(this));
     buttonsPanel.add(saveSQWRLResultButton);
-    JButton runSQWRLQueryButton = createButton("Rerun", "Rerun this SQWRL query", new RunSQWRLQueryActionListener());
+    JButton runSQWRLQueryButton = createButton("返回", "Rerun this SQWRL query", new RunSQWRLQueryActionListener());
     buttonsPanel.add(runSQWRLQueryButton);
-    JButton closeSQWRLResultButton = createButton("Close", "Close the tab for this query",
+    JButton closeSQWRLResultButton = createButton("关闭", "Close the tab for this query",
       new CloseSQWRLResultActionListener());
     buttonsPanel.add(closeSQWRLResultButton);
 
@@ -109,16 +109,16 @@ public class SQWRLResultView extends JPanel implements SWRLAPIView
 
         if (SQWRLResultView.this.sqwrlResult == null || SQWRLResultView.this.sqwrlResult.getNumberOfRows() == 0) {
           SQWRLResultView.this.sqwrlQueryControlView.appendToConsole(
-            "No result returned for SQWRL query '" + SQWRLResultView.this.queryName + "' - closing tab.\n");
+            "此次SQWRL推理查询任务没有结果返回 '" + SQWRLResultView.this.queryName + "' - 关闭窗口.\n");
           SQWRLResultView.this.sqwrlQueryControlView.removeSQWRLResultView(SQWRLResultView.this.queryName);
         } else
           validate();
       } catch (SQWRLInvalidQueryNameException e) {
         SQWRLResultView.this.sqwrlQueryControlView
-          .appendToConsole("Invalid query name " + SQWRLResultView.this.queryName + ".\n");
+          .appendToConsole("无效的查询名称 " + SQWRLResultView.this.queryName + ".\n");
       } catch (SQWRLException e) {
         SQWRLResultView.this.sqwrlQueryControlView.appendToConsole(
-          "Exception running SQWRL query '" + SQWRLResultView.this.queryName + "': " + (e != null ? e.getMessage() : "")
+          "发生异常: '" + SQWRLResultView.this.queryName + "': " + (e != null ? e.getMessage() : "")
             + "\n");
       }
 

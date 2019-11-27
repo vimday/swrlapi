@@ -152,14 +152,14 @@ public class SQWRLQueryControlView extends JPanel implements SWRLAPIView
 
       if (SQWRLQueryControlView.this.sqwrlResultViews.size() == SQWRLQueryControlView.MAXIMUM_OPEN_RESULT_VIEWS) {
         appendToConsole(
-          "A maximum of " + SQWRLQueryControlView.MAXIMUM_OPEN_RESULT_VIEWS + " result tabs may be open at once. ");
-        appendToConsole("Please close an existing tab to display results for the selected query.\n");
+          "最多" + SQWRLQueryControlView.MAXIMUM_OPEN_RESULT_VIEWS + " 个推理查询结果窗口能被同时展示 ");
+        appendToConsole("请关闭一个窗口来进行这次推理查询任务.\n");
       } else {
         try {
           SQWRLQuerySelector querySelector = SQWRLQueryControlView.this.sqwrlQuerySelector;
 
           if (querySelector == null) {
-            appendToConsole("Configuration error: no query selector supplied. No queries can be executed!\n");
+            appendToConsole("错误! 没有查询任务被选中，请选择一个查询任务\n");
           } else {
             queryName = SQWRLQueryControlView.this.sqwrlQuerySelector.getSelectedQueryName();
 
@@ -172,26 +172,26 @@ public class SQWRLQueryControlView extends JPanel implements SWRLAPIView
               else
                 displaySQWRLResult(queryName.get(), sqwrlResult, startTime);
             } else
-              appendToConsole("No enabled SQWRL query selected.\n");
+              appendToConsole("没有选中推理查询任务！\n");
           }
         } catch (SQWRLInvalidQueryNameException e) {
           if (queryName.isPresent())
-            appendToConsole(queryName.get() + " is not a valid SQWRL query or is not enabled.\n");
+            appendToConsole(queryName.get() + " 不是一个有效的SQWRL推理查询任务.\n");
           else
-            appendToConsole("No enabled SQWRL query selected.\n");
+            appendToConsole("没有选中SQWRL规则.\n");
         } catch (SQWRLException | RuntimeException e) {
           if (queryName.isPresent())
             appendToConsole(
-              "Exception running SQWRL query " + queryName.get() + ": " + buildChainedErrorMessage(e) + "\n");
+              "发生异常，运行推理查询任务:" + queryName.get() + ": " + buildChainedErrorMessage(e) + "\n");
           else
-            appendToConsole("Exception running SQWRL queries: " + buildChainedErrorMessage(e) + "\n");
+            appendToConsole("发生异常，运行推理查询任务: " + buildChainedErrorMessage(e) + "\n");
         }
       }
     }
 
     private void indicateEmptySQWRLResult(@NonNull String queryName)
     {
-      appendToConsole("SQWRL query " + queryName + " did not generate any result.\n");
+      appendToConsole("SQWRL推理查询任务 " + queryName + " 并未出现任何与规则库中规则的冲突！ \n");
 
       if (SQWRLQueryControlView.this.sqwrlResultViews.containsKey(queryName)) {
         SQWRLResultView queryResultsView = SQWRLQueryControlView.this.sqwrlResultViews.get(queryName);
@@ -203,13 +203,13 @@ public class SQWRLQueryControlView extends JPanel implements SWRLAPIView
     private void displaySQWRLResult(@NonNull String queryName, @NonNull SQWRLResult sqwrlResult, long startTime)
       throws SQWRLException
     {
-      appendToConsole("See the " + queryName + " tab to review results of the SQWRL query.\n");
-      appendToConsole("The query took " + (System.currentTimeMillis() - startTime) + " milliseconds. ");
+      appendToConsole("请看 " + queryName + " 窗口来复现这个SQWRL推理查询结果.\n");
+      appendToConsole("这次推理查询共耗时 " + (System.currentTimeMillis() - startTime) + " milliseconds. ");
 
       if (sqwrlResult.getNumberOfRows() == 1)
-        appendToConsole("1 row was returned.\n");
+        appendToConsole("1 行推理查询结果已被返回在 "+queryName+" 窗口中.\n");
       else
-        appendToConsole("" + sqwrlResult.getNumberOfRows() + " rows were returned.\n");
+        appendToConsole("" + sqwrlResult.getNumberOfRows() + " 行推理查询结果已被返回在 "+ queryName+" 窗口中.\n");
 
       SQWRLResultView sqwrlResultView;
 
@@ -221,7 +221,7 @@ public class SQWRLQueryControlView extends JPanel implements SWRLAPIView
         sqwrlResultView.initialize();
         SQWRLQueryControlView.this.sqwrlResultViews.put(queryName, sqwrlResultView);
         ((JTabbedPane)getParent())
-          .addTab(queryName, null, sqwrlResultView, "SQWRL Result for query '" + queryName + "'");
+          .addTab(queryName, null, sqwrlResultView, "'" + queryName + "'的推理查询结果");
       }
 
       sqwrlResultView.validate();

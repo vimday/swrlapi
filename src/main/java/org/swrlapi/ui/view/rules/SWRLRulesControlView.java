@@ -42,20 +42,20 @@ public class SWRLRulesControlView extends JPanel implements SWRLAPIView
 
     JPanel buttonsPanel = new JPanel(new FlowLayout());
     JButton button = createButton("OWL+SWRL->" + ruleEngineName,
-      "Translate SWRL rules and relevant OWL knowledge to rule engine",
+      "把SWRL规则及OWL本体支持加载进推理引擎",
       new ImportActionListener(this.swrlRuleEngineModel, console, this));
     buttonsPanel.add(button);
-    button = createButton("Run " + ruleEngineName, "Run the rule engine",
+    button = createButton("进行推理分类任务" + ruleEngineName, "运行推理引擎",
       new RunActionListener(this.swrlRuleEngineModel, console, this));
     buttonsPanel.add(button);
-    button = createButton(ruleEngineName + "->OWL", "Translate asserted rule engine knowledge to OWL knowledge",
+    button = createButton(ruleEngineName + "->OWL", "把推理结果转换到OWL本体中",
       new ExportActionListener(this.swrlRuleEngineModel, console, this));
     buttonsPanel.add(button);
     add(BorderLayout.SOUTH, buttonsPanel);
 
-    console.append("Using the " + ruleEngineName + " rule engine.\n\n");
-    console.append("Press the 'OWL+SWRL->" + ruleEngineName
-      + "' button to transfer SWRL rules and relevant OWL knowledge to the rule engine.\n");
+    console.append("正在使用 " + ruleEngineName + " 规则推理引擎.\n\n");
+    console.append("点击 'OWL+SWRL->" + ruleEngineName
+      + "' 按钮 to transfer SWRL rules and relevant OWL knowledge to the rule engine.\n");
     console.append("Press the 'Run " + ruleEngineName + "' button to run the rule engine.\n");
     console.append("Press the '" + ruleEngineName
       + "->OWL' button to transfer the inferred rule engine knowledge to OWL knowledge.\n\n");

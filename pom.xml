@@ -14,9 +14,6 @@
   <name>SWRLAPI</name>
   <description>Java  API for working with SWRL rules and SQWRL queries</description>
   <url>https://github.com/protegeproject/swrlapi/wiki</url>
-    <properties>
-        <swrlapi.drools.version>2.0.6</swrlapi.drools.version>
-    </properties>
   <scm>
     <connection>scm:git:git@github.com:protegeproject/swrlapi.git</connection>
     <developerConnection>scm:git:git@github.com:protegeproject/swrlapi.git</developerConnection>
@@ -31,11 +28,6 @@
 
   <dependencies>
 
-      <dependency>
-          <groupId>edu.stanford.swrl</groupId>
-          <artifactId>swrlapi-drools-engine</artifactId>
-          <version>${swrlapi.drools.version}</version>
-      </dependency>
 
     <dependency>
       <groupId>net.sourceforge.owlapi</groupId>

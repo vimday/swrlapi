@@ -31,7 +31,7 @@ public class SWRLRulesAndSQWRLQueriesTableModel extends AbstractTableModel imple
     RuleContentOnly, QueryContentOnly, RuleAndQueryContent
   }
 
-  private static final String RULE_NAME_COLUMN_TITLE = "规则名称";
+  private static final String RULE_NAME_COLUMN_TITLE = "名称";
   private static final String RULE_TEXT_COLUMN_TITLE = "规则";
   private static final String QUERY_TEXT_COLUMN_TITLE = "查询";
   private static final String RULE_AND_QUERY_TEXT_COLUMN_TITLE = "主体";
