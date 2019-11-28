@@ -34,15 +34,15 @@ public class SWRLRuleExecutionView extends JTabbedPane implements SWRLAPIView
     assertedOWLAxiomsView.initialize();
     inferredOWLAxiomsView.initialize();
 
-    addTab("Control", null, swrlRulesControlView, "Control Tab");
+    addTab("控制台", null, swrlRulesControlView, "Control Tab");
 
-    addTab("Rules", null, importedSWRLRulesView, "Rules Tab");
+    //addTab("Rules", null, importedSWRLRulesView, "Rules Tab");
 
-    addTab("Asserted Axioms", null, assertedOWLAxiomsView, "Asserted OWL Axioms Tab");
+    //addTab("Asserted Axioms", null, assertedOWLAxiomsView, "Asserted OWL Axioms Tab");
 
-    addTab("Inferred Axioms", null, inferredOWLAxiomsView, "Inferred OWL Axioms Tab");
+    addTab("推理出的公理", null, inferredOWLAxiomsView, "Inferred OWL Axioms Tab");
 
-    addTab("OWL 2 RL", null, ruleTablesView, "OWL 2 RL Tab");
+   // addTab("OWL 2 RL", null, ruleTablesView, "OWL 2 RL Tab");
   }
 
   @Override public void update()

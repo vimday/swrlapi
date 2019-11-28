@@ -55,13 +55,13 @@ public class SWRLRulesControlView extends JPanel implements SWRLAPIView
 
     console.append("正在使用 " + ruleEngineName + " 规则推理引擎.\n\n");
     console.append("点击 'OWL+SWRL->" + ruleEngineName
-      + "' 按钮 to transfer SWRL rules and relevant OWL knowledge to the rule engine.\n");
-    console.append("Press the 'Run " + ruleEngineName + "' button to run the rule engine.\n");
-    console.append("Press the '" + ruleEngineName
-      + "->OWL' button to transfer the inferred rule engine knowledge to OWL knowledge.\n\n");
-    console.append(
-      "The SWRLAPI supports an OWL profile called OWL 2 RL and uses an OWL 2 RL-based reasoner to perform reasoning.\n");
-    console.append("See the 'OWL 2 RL' sub-tab for more information on this reasoner.");
+      + "' 按钮 把SWRL规则与OWL本体加载进规则引擎.\n");
+    console.append("点击'运行 " + ruleEngineName + "' 按钮以进行推理分类.\n");
+    console.append("点击 '" + ruleEngineName
+      + "->OWL' 按钮把推理结果写入owl文件.\n\n");
+    //console.append(
+      //"The SWRLAPI supports an OWL profile called OWL 2 RL and uses an OWL 2 RL-based reasoner to perform reasoning.\n");
+    //console.append("See the 'OWL 2 RL' sub-tab for more information on this reasoner.");
   }
 
   @Override public void update()
