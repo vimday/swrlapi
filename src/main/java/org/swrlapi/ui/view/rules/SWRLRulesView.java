@@ -20,7 +20,7 @@ public class SWRLRulesView extends JSplitPane implements SWRLAPIView
 {
 	private static final long serialVersionUID = 1L;
 
-	private static final double SPLIT_PANE_RESIZE_WEIGHT = 0.6;
+	private static final double SPLIT_PANE_RESIZE_WEIGHT = 1.0;
 
 	@NonNull private final SWRLRulesTableView ruleTablesView;
 	@NonNull private final SWRLRuleExecutionView ruleExecutionView;

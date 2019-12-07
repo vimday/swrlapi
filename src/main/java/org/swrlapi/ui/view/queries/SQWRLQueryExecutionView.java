@@ -33,7 +33,7 @@ public class SQWRLQueryExecutionView extends JTabbedPane implements SWRLAPIView
     queryControlView.initialize();
     ruleTablesView.initialize();
 
-    addTab("推理查询任务", null, queryControlView, "SQWRL Queries Tab");
+    //addTab("推理查询任务", null, queryControlView, "SQWRL Queries Tab");
     //addTab("OWL 2 RL", null, ruleTablesView, "OWL 2 RL Tab");
   }
 
